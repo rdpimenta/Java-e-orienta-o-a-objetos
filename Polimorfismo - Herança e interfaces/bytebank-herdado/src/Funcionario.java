@@ -3,12 +3,11 @@ public abstract class Funcionario {
     private String nome;
     private String cpf;
     private double salario;
+    private int senha;
 
     public Funcionario() {
 
     }
-
-    public abstract double getBonificacao();
 
     public String getNome() {
         return nome;
@@ -33,4 +32,6 @@ public abstract class Funcionario {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+    public abstract double getBonificacao();
 }
