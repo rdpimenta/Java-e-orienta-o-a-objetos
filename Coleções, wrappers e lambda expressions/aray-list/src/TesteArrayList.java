@@ -1,8 +1,9 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
-public class Teste {
+public class TesteArrayList {
     public static void main(String[] args) {
-        ArrayList<Conta> lista = new ArrayList<Conta>();
+        List<Conta> lista = new LinkedList<>();
 
         Conta cc = new ContaCorrente(22, 11);
         lista.add(cc);
