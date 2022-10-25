@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class TesteEscrita3 {
+public class TesteEscritaPrintStreamPrintWriter {
     public static void main(String[] args) throws IOException {
 //        PrintStream ps = new PrintStream("lorem2.txt");
         PrintWriter ps = new PrintWriter("lorem2.txt");
