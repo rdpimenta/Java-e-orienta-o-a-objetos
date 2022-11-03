@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Stream;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class TestaCurso {
     public static void main(String[] args) {
@@ -28,5 +26,28 @@ public class TestaCurso {
                 .map(Curso::getAlunos)
                 .filter(alunos -> alunos > 100)
                 .forEach(System.out::println);
+        System.out.println("----------");
+
+        cursos.stream()
+                .filter(c -> c.getAlunos() > 100)
+                .findAny()
+                .ifPresent(c -> System.out.println(c.getNome()));
+        System.out.println("----------");
+
+        Map<String, Integer> mapa = cursos
+                .stream()
+                .filter(c -> c.getAlunos() > 100)
+                .collect(Collectors.toMap(Curso::getNome, Curso::getAlunos));
+
+        cursos.stream()
+                .filter(c -> c.getAlunos() > 50)
+                .findFirst()
+                .ifPresent(c -> System.out.println(c.getNome()));
+        System.out.println("----------");
+
+        cursos.stream()
+                .mapToInt(Curso::getAlunos)
+                .average()
+                .ifPresent(c -> System.out.println("Média de alunos: " + c));
     }
 }
